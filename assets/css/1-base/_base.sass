@@ -1,9 +1,8 @@
-/*	Typography presets
-  ------------------------------------	*/
+//	Typography
 
 .gigantic, .huge, .large, .bigger, .big,
 h1, h2, h3, h4, h5, h6
-  color: $primary-color
+  color: $accent-color
   font-weight: bold
 
 .gigantic
@@ -52,20 +51,19 @@ hr
 
 
 
-/* Links
-  ------------------------------------	*/
+// Links
+
 a
-  color: $accent-color
+  color: $link-color
   text-decoration: none
   outline: 0
 
 a:hover, a:focus
-  color: lighten($accent-color, 20%)
+  color: lighten($link-color, 20%)
 
 
 
-/* Selection colors (easy to forget)
-  ------------------------------------	*/
+// Selection colors (easy to forget)
 
 ::selection
   background: $selection-color
@@ -84,38 +82,17 @@ body
 
 
 
-/* Basic Styles
-  ------------------------------------	*/
+// Basic Styles
+
+html,
+body
+  min-height: 100vh
+
 body
   background: $bg-color
   font-size: 14px
   line-height: 1.6
-  font-family: 'Open Sans' sans-serif
+  font-family: 'Fira Sans', sans-serif
   color: $text-color
   -webkit-font-smoothing: antialiased
   -webkit-text-size-adjust: 100%
-
-svg
-  +size(100%)
-
-h3
-  @extend %small-bold
-  color: $accent-color
-  text-align: center
-  padding: 100px 0 30px
-
-fieldset
-  padding: 0
-  margin: 0
-  border: none
-
-@media screen and (max-width: 480px)
-  h3
-    padding: 50px 0 50px
-
-section:nth-child(odd)
-  background: $bg-color
-  padding-bottom: 100px
-
-  h3
-    color: darken($accent-color, 10%)
