@@ -1,3 +1,4 @@
+@import url(http://fonts.googleapis.com/css?family=Fira+Sans:400,400italic);
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 /**
  * 1. Set default font family to sans-serif.
@@ -442,6 +443,35 @@ body {
   -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: 100%; }
 
+.home-cta {
+  font-size: 28px;
+  display: block;
+  background: white;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  padding: 0.4em 0;
+  line-height: 1.25;
+  transition: all 0.15s ease-in-out; }
+  .home-cta:hover {
+    box-shadow: 0px 5px 14px rgba(0, 0, 0, 0.6); }
+
+.flex-video {
+  height: 0;
+  margin-bottom: 0.88889rem;
+  overflow: hidden;
+  padding-bottom: 56%;
+  position: relative; }
+
+.flex-video iframe,
+.flex-video object,
+.flex-video embed,
+.flex-video video {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  left: 0; }
+
 .home-wrap header {
   width: 135px;
   background: white;
@@ -573,6 +603,80 @@ body {
     -webkit-transform: translateY(0%);
             transform: translateY(0%); } }
 
+section.about {
+  background-image: url(../img/portrait2.jpg);
+  background-position: center bottom;
+  background-size: cover;
+  color: #3f3f42; }
+  section.about h2 {
+    color: #3f3f42;
+    font-size: 60px;
+    font-weight: 400;
+    line-height: 1;
+    margin-left: -108px;
+    text-shadow: #fff 0px 0px 1px; }
+  section.about .home-lead {
+    text-shadow: #fff 0px 0px 1px; }
+
+@media (max-width: 640px) {
+  section.about h2, section.about .home-lead {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 300px;
+    text-shadow: #fff 0px 0px 1px,#fff 0px 0px 1px; } }
+
+section.youtube {
+  background-image: url(../img/youtube.png);
+  background-color: #e20a0a;
+  background-position: center;
+  background-size: cover;
+  color: white; }
+  section.youtube .home-cta {
+    color: #e20a0a; }
+  section.youtube .flex-video {
+    box-shadow: 0px 4px 40px 3px rgba(0, 0, 0, 0.5);
+    -webkit-transform: scale(1.4);
+            transform: scale(1.4); }
+    @media (max-width: 985px) {
+      section.youtube .flex-video {
+        -webkit-transform: scale(1);
+                transform: scale(1); } }
+  section.youtube .video-strip {
+    position: absolute;
+    top: 0;
+    height: calc(100% + 100px);
+    width: 100%;
+    margin: -50px 0;
+    background-image: url(../img/video-strip.png);
+    background-position: center 0px;
+    background-repeat: repeat-y;
+    background-size: 70%; }
+    @media (max-width: 640px) {
+      section.youtube .video-strip {
+        display: none; } }
+  section.youtube .col-1 {
+    position: relative;
+    height: 400px;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
+    @media (max-width: 640px) {
+      section.youtube .col-1 {
+        height: auto;
+        display: block;
+        padding: 50px 20px; }
+        section.youtube .col-1:last-child {
+          padding: 0px 20px 50px; } }
+
 .home-wrap {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -591,10 +695,7 @@ body {
   .home-sections .flex {
     display: -webkit-flex;
     display: -ms-flexbox;
-    display: flex;
-    -webkit-flex-direction: rows;
-        -ms-flex-direction: rows;
-            flex-direction: rows; }
+    display: flex; }
   .home-sections .flex--center {
     -webkit-justify-content: center;
         -ms-flex-pack: center;
@@ -609,23 +710,40 @@ body {
             order: -1; }
 
 .col-1 {
-  max-width: 300px;
-  margin: 0 10px;
-  background: pink; }
+  width: 320px;
+  padding: 0 10px;
+  box-sizing: border-box; }
+
+.push-right {
+  margin-left: 330px; }
 
 .col-2 {
-  max-width: 620px;
-  margin: 0 10px;
-  background: honeydew; }
+  max-width: 640px;
+  padding: 0 10px;
+  box-sizing: border-box;
+  width: 100%; }
 
 .col-50 {
-  width: 50%;
-  background: yellow; }
+  width: 50%; }
 
 @media (max-width: 640px) {
   .home-sections .flex {
     display: block; }
   .col-1 {
-    max-width: 100%; }
+    width: 100%; }
   .col-50 {
-    width: auto; } }
+    width: auto; }
+  .push-right {
+    margin-left: 0; } }
+
+.home-lead {
+  line-height: 1.1;
+  font-size: 36px; }
+  .home-lead.outdented {
+    text-indent: -0.8em; }
+
+@media (max-width: 640px) {
+  .home-lead {
+    text-align: center; }
+    .home-lead.outdented {
+      text-indent: 0; } }

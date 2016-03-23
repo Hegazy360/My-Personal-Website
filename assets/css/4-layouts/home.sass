@@ -12,10 +12,10 @@
     padding: 50px 0
 
 
+
   // Flex Classes
   .flex
     display: flex
-    flex-direction: rows
 
   .flex--center
     justify-content: center
@@ -28,30 +28,51 @@
 
 
 
-//columns
+// columns
 .col-1
-  max-width: 300px
-  margin: 0 10px
-  background: pink
+  width: 320px
+  padding: 0 10px
+  box-sizing: border-box
+
+.push-right
+  margin-left: 330px
 
 .col-2
-  max-width: 620px
-  margin: 0 10px
-  background: honeydew
+  max-width: 640px
+  padding: 0 10px
+  box-sizing: border-box
+  width: 100%
 
 .col-50
   width: 50%
-  background: yellow
-
 
 
 @media (max-width: 640px)
   .home-sections .flex
     display: block
 
-
   .col-1
-    max-width: 100%
+    width: 100%
 
   .col-50
     width: auto
+
+  .push-right
+    margin-left: 0
+
+
+
+// typography
+.home-lead
+  line-height: 1.1
+  font-size: 36px
+
+  &.outdented
+    text-indent: -0.8em
+
+@media (max-width: 640px)
+  .home-lead
+    text-align: center
+
+    &.outdented
+      text-indent: 0
