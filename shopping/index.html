@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Shopping Assisstant</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/custom-min.css">
+    <script type="text/javascript" src=assets/js/bundle.js></script>
+    <link href='https://fonts.googleapis.com/css?family=Permanent+Marker' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
+  </head>
+
+  <body>
+
+    <p class="welcome">Welcome to The Shopping Assisstant.
+      <br>
+
+    </p>
+
+    <div  id=registration>
+
+      <h1>You are Online</h1>
+      <form>
+        <textarea type="textarea" readonly name="assisstant" id="assisstant" placeholder="Assisstant"></textarea>
+        <br>
+        <textarea name="client" id="client" placeholder="Client" onkeypress="return searchKeyPress(event);" wrap='off'></textarea>
+        <button type="button" class="confirm" id="send" onClick="confirm()">Send</button>
+      </form>
+
+      <div id="searchResults"></div>
+
+
+    </div>
+
+
+
+  </body>
+
+</html>

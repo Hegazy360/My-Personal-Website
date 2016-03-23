@@ -1,0 +1,102 @@
+html, body {
+  background-color: #E0F2F1;
+  height: 100%;
+}
+.app-content {
+  width: 70%;
+  min-width: 360px;
+  left: 10%;
+  right: 10%;
+  top: 0;
+  overflow: auto;
+}
+.searchBar {
+  position: relative;
+  width: 70%;
+  height: 60px;
+}
+md-toolbar {
+  border-style: solid;
+  border-width: 1px;
+  font-family: 'Chewy', cursive;
+}
+.resultsTop > img {
+  width: 80px;
+  height: 80px;
+}
+md-card {
+  font-family: 'Crete Round', serif;
+  font-size: 15px;
+  /*font-size: 1.8vw;*/
+  width: 100%;
+  /*text-indent: 25px;*/
+  margin: auto;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+}
+.resultsTop {
+  text-indent: 0px;
+}
+th, td {
+  padding-left: 25px;
+}
+md-content {
+  width: 100%;
+}
+.show {
+  opacity: 0;
+  /* make things invisible upon start */
+  -webkit-animation: fadeIn ease-in 1;
+  /* call keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+  -moz-animation: fadeIn ease-in 1;
+  animation: fadeIn ease-in 1;
+  -webkit-animation-fill-mode: forwards;
+  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+  -moz-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+  animation-duration: 1s;
+}
+.show.resultsBottom {
+  -webkit-animation-delay: 1s;
+  -moz-animation-delay: 1s;
+  animation-delay: 1s;
+}
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+    opacity: 1\9;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-moz-keyframes fadeIn {
+  from {
+    opacity: 0;
+    opacity: 1\9;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    opacity: 1\9;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.app-content::-webkit-scrollbar {
+  width: 0.3em;
+}
+.app-content::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px #AED581;
+}
+.app-content::-webkit-scrollbar-thumb {
+  background-color: #757575;
+  outline: 1px solid slategrey;
+}

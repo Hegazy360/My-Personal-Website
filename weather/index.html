@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+  <head lang="en">
+    <meta charset="utf-8">
+    <meta name="viewport" content="user-scalable=no,width=device-width,initial-scale=1.0,maximum-scale=1.0"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css" type="text/css">
+    <!-- <link rel="stylesheet" href="bower_components/angular-material/themes/blue-theme.css"> -->
+    <link rel="stylesheet" href="css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Crete+Round' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Chewy' rel='stylesheet' type='text/css'>
+  </head>
+
+  <body ng-app="weatherApp" ng-controller="ListController" layout="column" layout-align="top center">
+    <!-- toolbar -->
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <span class="md-flex">7 Days Weather Search</span>
+      </div>
+
+    </md-toolbar>
+
+    <md-content class="md-flex" layout="column" layout-align="center center">
+      <!-- app content : search bar + results -->
+      <md-input-container class="md-block searchBar md-flex" id="searchBar" layout="row" layout-align="center none">
+        <label>City</label>
+        <input ng-model="searchTerm" autocomplete="off">
+        <md-progress-linear class="ng-hide" ng-show="isSearching" md-mode="indeterminate"></md-progress-linear>
+      </md-input-container>
+
+      <div class="app-content">
+
+        <md-card class="results ng-hide md-flex" ng-show="searchTerm" ng-repeat="weather in currentWeatherData.weather | limitTo:1">
+
+          <md-card class="show resultsTop" layout="row" layout-align="center center">
+            <h3>Current Weather</h3>
+            <!-- <h2>{{currentWeatherData.dt * 1000 | date:'dd-MM-yyyy'}}</h2> -->
+            <!-- <img src="http://openweathermap.org/img/w/{{currentWeatherData.weather[0].icon}}.png" alt="Weather Icon"/> -->
+            <!-- <h2>{{currentWeatherData.weather[0].main}}</h2> -->
+          </md-card>
+          <!-- bottom part of results : details -->
+          <md-card class="show resultsBottom" layout="column" layout-align="space-around start">
+            <!-- Invisible results table for better alignment -->
+            <table>
+              <tr>
+                <td class="column1">
+                  <h3>{{"Place: "}}</h3>
+                </td>
+                <td class="column2" colspan="2">
+                  <h3>{{currentWeatherData.name}},{{currentWeatherData.sys.country}}</h3>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="column1">
+                  <h3>{{"Description: "}}</h3>
+                </td>
+                <td class="column2">
+                  <h3>{{currentWeatherData.weather[0].description}}</h3>
+                </td>
+                <td class="column3">
+                  <img src="http://openweathermap.org/img/w/{{currentWeatherData.weather[0].icon}}.png" alt="Weather Icon"/>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="column1">
+                  <h3>{{"Temperature: "}}</h3>
+                </td>
+                <td class="column2">
+                  <h3>{{currentWeatherData.main.temp + " &deg;C"}}</h3>
+                </td>
+              </tr>
+            </table>
+          </md-card>
+
+        </md-card>
+
+        <md-card class="results ng-hide md-flex" ng-show="searchTerm" ng-repeat="dayWeatherData in weatherData.list">
+          <!-- top part of results : overview -->
+          <md-card class="show resultsTop" id="resultsTop" layout="row" layout-align="space-around center">
+            <h2>{{dayWeatherData.dt * 1000 | date:'dd-MM-yyyy'}}</h2>
+            <img src="http://openweathermap.org/img/w/{{dayWeatherData.weather[0].icon}}.png" alt="Weather Icon"/>
+            <h2>{{dayWeatherData.weather[0].main}}</h2>
+          </md-card>
+          <!-- bottom part of results : details -->
+          <md-card class="show resultsBottom" id="resultsBottom" layout="column" layout-align="space-around start">
+            <!-- Invisible results table for better alignment -->
+            <table>
+              <tr>
+                <td class="column1">
+                  <h3>{{"Place: "}}</h3>
+                  <h3>{{"Description: "}}</h3>
+                  <h3>{{"Temperature: "}}</h3>
+                  <h3>{{"Min: "}}</h3>
+                  <h3>{{"Max: "}}</h3>
+                  <h3>{{"Wind Speed: "}}</h3>
+                  <h3>{{"Humidity: "}}</h3>
+                </td>
+                <td class="column2">
+                  <h3>{{weatherData.city.name}},{{weatherData.city.country}}</h3>
+                  <h3>{{dayWeatherData.weather[0].description}}</h3>
+                  <h3>{{dayWeatherData.temp.day + " &deg;C"}}</h3>
+                  <h3>{{dayWeatherData.temp.min + " &deg;C"}}</h3>
+                  <h3>{{dayWeatherData.temp.max+ " &deg;C"}}</h3>
+                  <h3>{{dayWeatherData.speed+ " m/s"}}</h3>
+                  <h3>{{dayWeatherData.humidity + "%"}}</h3>
+                </td>
+              </tr>
+            </table>
+          </md-card>
+
+        </md-card>
+
+      </div>
+    </md-content>
+
+    <!-- used libraries -->
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.min.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="bower_components/angular-material/angular-material.min.js"></script>
+    <script src="bower_components/hammerjs/hammer.min.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+
+</html>
