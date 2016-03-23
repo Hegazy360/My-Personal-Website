@@ -1,0 +1,32 @@
+{
+  "name": "WeatherApp",
+  "description": "Weather search app assignement for Telenotes US",
+  "main": "index.html",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "weatherapp",
+    "weather",
+    "telenotes"
+  ],
+  "authors": [
+    "Mohamed Hegazi"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.0",
+    "angular-material": "^1.0.6",
+    "angular-animate": "^1.5.0",
+    "angular-aria": "^1.5.0",
+    "hammerjs": "hammer.js#^2.0.6",
+  }
+}

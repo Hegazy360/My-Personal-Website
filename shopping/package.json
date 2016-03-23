@@ -1,0 +1,17 @@
+{
+  "name": "ShoppingAssisstant",
+  "version": "0.0.1",
+  "author": "Mohamed Hegazi",
+  "description": "Code designed to assisst in shopping using amazon api and regex rules",
+  "dependencies": {
+    "amazon-product-api": "0.3.x"
+  },
+  "devDependencies": {
+    "browserify": "latest",
+    "watchify": "latest"
+  },
+  "scripts": {
+    "build-js": "browserify js/main.js > assets/js/bundle.js",
+    "watch-js": "watchify assets/js/main.js -o assets/js/bundle.js -v"
+  }
+}
